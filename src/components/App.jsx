@@ -7,6 +7,8 @@ const tickets = data.tickets.map((ticket, id) =>  {
 	return Object.assign({ id }, ticket);
 });
 
+tickets.sort((first, second) => (first.price - second.price));
+
 const App = () => (
 		<TicketList tickets={ tickets } />
 	);
