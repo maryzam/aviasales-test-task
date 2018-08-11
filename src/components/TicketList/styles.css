@@ -1,0 +1,54 @@
+
+.ticketList {  
+	display: flex;
+	flex-direction: column;
+	margin: 20px;
+}
+
+.ticket {  
+	display: flex;
+	flex-direction: row;
+
+	margin-bottom: 20px;
+	
+	background-color: #fff;
+}
+
+.ticket__buy {  
+	padding: 20px;
+}
+.ticket__carrier-logo {  }
+.ticket__buy-button {  
+	padding: 10px;
+	color: #fff;
+	text-align: center;
+	background-color: #ff6d00;
+
+}
+
+.ticket__buy-button:hover {
+	background-color: #ff8124
+}
+
+.ticket__details { 
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	flex: 1 0;
+
+	padding: 20px;
+}
+.ticket__details p {
+	padding: 0 5px;
+}
+.ticket__details-departure {  
+	order: 1;
+}
+.ticket__details-stops {  
+	order: 2;
+	flex: 1 0;
+	text-align: center;
+}
+.ticket__details-arrival { 
+	order: 3;
+}
