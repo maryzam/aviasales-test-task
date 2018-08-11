@@ -15,6 +15,10 @@ function formatStops(stops) {
 	return `${stops} пересадок`;
 }
 
+function getCarrierLogo(carrier) {
+	return `assets/carriers/${carrier}.png`
+} 
+
 const Ticket = ({ info }) => {
 
 		return (
@@ -22,7 +26,7 @@ const Ticket = ({ info }) => {
 
 				<section className="ticket__buy">
 					<img className="ticket__carrier-logo" 
-						 src="" 
+						 src={ getCarrierLogo(info.carrier) } 
 						 alt={ info.carrier } />
 					<button className="ticket__buy-button">
 						Купить за { info.price }₽

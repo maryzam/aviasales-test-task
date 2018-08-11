@@ -1,8 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -12,7 +13,12 @@ const commonPlugins = [
           template: path.join('public', 'index.html'),
           alwaysWriteToDisk: true,
           inject: 'body'
-    })
+    }),
+    new CopyWebpackPlugin([{
+            from: 'public/assets/',
+            to: 'assets',
+            cache: true
+        }], {})
 ];
 
 module.exports = {
@@ -26,12 +32,12 @@ module.exports = {
     },
     module: {
          rules: [
-             {
-                 test: /\.jsx?$/,                 
-                 exclude: /(node_modules)/,
-                 use: 'babel-loader'
-             },
-             {
+            {
+                test: /\.jsx?$/,                 
+                exclude: /(node_modules)/,
+                use: 'babel-loader'
+            },
+            {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
@@ -43,7 +49,7 @@ module.exports = {
                         }
                     }
                 })
-             }
+            }
          ]
      },
      devtool: 'source-map',

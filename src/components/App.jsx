@@ -9,6 +9,9 @@ const tickets = data.tickets.map((ticket, id) =>  {
 
 tickets.sort((first, second) => (first.price - second.price));
 
+const carriers = new Set(tickets.map((t) => t.carrier));
+console.log(carriers);
+
 const App = () => (
 		<TicketList tickets={ tickets } />
 	);
