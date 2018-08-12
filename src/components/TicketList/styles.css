@@ -5,6 +5,16 @@
 	margin: 20px;
 }
 
+.noTickets {
+	background-color: #fff;
+	padding: 15px 20px;
+}
+
+.noTickets p {
+	padding: 5px;
+	text-align: center;
+}
+
 .ticket {  
 	display: flex;
 	flex-direction: row;
@@ -32,7 +42,6 @@
 	color: #fff;
 	text-align: center;
 	background-color: #ff6d00;
-
 }
 
 .ticket__buy-button:hover {
@@ -50,14 +59,17 @@
 .ticket__details p {
 	padding: 0 5px;
 }
+
 .ticket__details-departure {  
 	order: 1;
 }
+
 .ticket__details-stops {  
 	order: 2;
 	flex: 1 0;
 	text-align: center;
 }
+
 .ticket__details-arrival { 
 	order: 3;
 }

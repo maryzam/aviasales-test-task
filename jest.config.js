@@ -3,5 +3,12 @@ module.exports = {
     "collectCoverageFrom": [
     	'/src/**/*.test.{js,jsx}'
     ],
-    "coverageDirectory": "./coverage"
+    "coverageDirectory": "./coverage",
+    "transform": {
+	    "^.+\\.jsx?$": "babel-jest"
+	},
+	"moduleNameMapper": {
+    	"\\.(css|less)$": "identity-obj-proxy"
+    },
+    "setupTestFrameworkScriptFile": "./enzyme.setup.js"
 };
