@@ -1,14 +1,16 @@
 module.exports = {
-	"collectCoverage": true,
-    "collectCoverageFrom": [
-    	'/src/**/*.test.{js,jsx}'
+	collectCoverage: true,
+    collectCoverageFrom: [
+    	"src/**/*.{js,jsx}",
+        "!**/node_modules/**",
+        "!**/vendor/**",
     ],
-    "coverageDirectory": "./coverage",
-    "transform": {
+    coverageDirectory: "<rootDir>/coverage",
+    transform: {
 	    "^.+\\.jsx?$": "babel-jest"
 	},
-	"moduleNameMapper": {
+	moduleNameMapper: {
     	"\\.(css|less)$": "identity-obj-proxy"
     },
-    "setupTestFrameworkScriptFile": "./enzyme.setup.js"
+    setupTestFrameworkScriptFile: "./enzyme.setup.js"
 };
