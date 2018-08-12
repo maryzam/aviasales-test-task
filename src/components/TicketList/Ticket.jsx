@@ -1,17 +1,6 @@
 import React from 'react';
 
-function formatStops(stops) {
-	if (stops < 1) {
-		return "";
-	}
-	if (stops === 1) {
-		return "1 пересадка"; 
-	}
-	if (stops > 1 && stops < 5) {
-		return `${stops} пересадки`;
-	}
-	return `${stops} пересадок`;
-}
+import { formatStops } from '../../utils/formatting';
 
 function getCarrierLogo(carrier) {
 	return `assets/carriers/${carrier}.png`
