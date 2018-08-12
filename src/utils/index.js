@@ -11,3 +11,7 @@ export function formatStops(stops) {
 	}
 	return `${stops} пересадок`;
 }
+
+export function getCarrierLogo(carrier) {
+	return `assets/carriers/${carrier}.png`
+} 

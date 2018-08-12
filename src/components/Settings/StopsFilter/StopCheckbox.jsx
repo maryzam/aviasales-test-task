@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import { formatStops } from '../../../utils/formatting';
+import { formatStops } from '../../../utils';
 
 function getLabelText(stop) {
 	switch(stop) {

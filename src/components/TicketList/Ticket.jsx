@@ -1,10 +1,6 @@
 import React from 'react';
 
-import { formatStops } from '../../utils/formatting';
-
-function getCarrierLogo(carrier) {
-	return `assets/carriers/${carrier}.png`
-} 
+import { formatStops, getCarrierLogo } from '../../utils';
 
 const Ticket = ({ info }) => {
 
