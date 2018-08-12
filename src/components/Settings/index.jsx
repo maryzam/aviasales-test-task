@@ -4,12 +4,11 @@ import './styles.css';
 
 import StopsFilter from './StopsFilter';
 
-const Settings = ({ stops, handleStopToggle, handleStopOnly }) => (
+const Settings = ({ stops, handleStopsChange }) => (
 		<aside className="settings__panel">
 			<StopsFilter 
 				stops={ stops }
-				handleStopToggle={ handleStopToggle }
-				handleStopOnly={ handleStopOnly } />
+				handleStopsChange={ handleStopsChange } />
 		</aside>
 	);
 
