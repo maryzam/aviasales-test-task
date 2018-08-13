@@ -100,5 +100,25 @@
 
 .ticket__details-date, 
 .ticket__details-stops {
-	color: #b7b7b7;
+	color: #a7a7a7;
+}
+
+.ticket__details-path {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.ticket__details-line {
+	flex-grow: 1;
+	height: 0px;
+	margin-right: 1px;
+	border-top: 1px solid rgba(0,0,0,0.2);
+}
+
+.ticket__details-airplane {
+	width: 14px;
+	height: 14px;
+	background: no-repeat center center;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAIAAAD9iXMrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMjHxIGmVAAAAk0lEQVQoU42R0Q6CMAxF9/+fp8JAh1MGRiRiiPNlEWozrmZ7kOykSXO7m3ZbBQVkRdn1PURM5KubdicL5xx0QOR7jOMmy8/GQAdEvvc0bXPJ1qe1KH0R6qitfUERVfrEvlJVMwpAmPYi94drd1tCac0+P735Fbm9uA/DcrAS3Ci5X+r9kD1r70X2pP5f6j7+7pfoA/Dz35J3ql7hAAAAAElFTkSuQmCC');
 }
