@@ -14,7 +14,8 @@ class App extends React.Component {
 
 	state = {
 		tickets: allTickets,
-		stops: Array(4).fill(true)
+		stops: Array(4).fill(true),
+		currency: "RUB" // todo use const instead of string
 	}
 
 	handleStopsChange = (stops) => {
@@ -23,15 +24,24 @@ class App extends React.Component {
 		this.setState({ stops, tickets });
 	}
 
-	render() {
+	handleCurrencyChange = (event) => {
+		const { target } = event;
+		const currency = target.value;
+		this.setState({ currency });
+	}
 
+	render() {
+		console.log("render", this.state.currency);
 		return (
 			<Fragment>
 				<Settings 
 					stops={ this.state.stops }
-					handleStopsChange = { this.handleStopsChange } />
+					handleStopsChange = { this.handleStopsChange } 
+					currency={ this.state.currency }
+					handleCurrencyChange={ this.handleCurrencyChange }/>
 				<TicketList 
-					tickets={ this.state.tickets } />
+					tickets={ this.state.tickets } 
+					currency={ this.state.currency } />
 			</Fragment>
 		);
 	}

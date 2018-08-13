@@ -1,0 +1,28 @@
+
+.currency__list {  
+	padding: 20px 15px;
+}
+
+.currency__button, .currency__button--selected { 
+	padding: 10px 20px;
+	border: 1px solid;
+	cursor: pointer;
+}
+
+.currency__button { 
+	color: #2e9cf4;
+	border-color: #d2d5d6;;
+	background-color: #fff;
+}
+
+.currency__button:hover {
+	border-color: #64b5f5;
+	background-color: #f2fcff;
+}
+
+.currency__button--selected {
+	color: #fff;
+	border-color: #2e9cf4;
+	background-color: #2e9cf4;
+}
+
