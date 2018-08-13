@@ -31,7 +31,7 @@ class CurrencySwitcher extends React.Component {
 
 		const { currencies, isLoading } = this.state;
 		const { selectedCurrency, handleCurrencyChange } = this.props;
-		console.log(currencies);
+		
 		return ( 
 			<div className="currency__list">
 				<div>Валюта</div>

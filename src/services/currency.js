@@ -57,7 +57,6 @@ class CurrencyService {
 	getSupportedCurrencies() {
 		return supportedCurrencies;
 	}
-
 }
 
 export default new CurrencyService();

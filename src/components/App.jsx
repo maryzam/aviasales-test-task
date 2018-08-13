@@ -31,7 +31,6 @@ class App extends React.Component {
 	}
 
 	render() {
-		console.log("render", this.state.currency);
 		return (
 			<Fragment>
 				<Settings 
