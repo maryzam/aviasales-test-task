@@ -1,5 +1,5 @@
 
-import { formatStops, getCarrierLogo } from '../../src/utils';
+import { formatStops, formatPrice, getCarrierLogo } from '../../src/utils';
 
 function getRandomStop(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -58,4 +58,30 @@ describe("getCarrierLogo function", () => {
 		const link = getCarrierLogo(carrier);
 		expect(link).toMatch(new RegExp(carrier));
 	})
-})
+});
+
+describe("formatPrice function", () => {
+
+	it("should format prices based on currency settings correctly", () => {
+		const price = 201;
+		expect(formatPrice(price, "RUB")).toBe("201₽");
+		expect(formatPrice(price, "USD")).toBe("$201");
+		expect(formatPrice(price, "EUR")).toBe("€201");
+	});
+
+	it("should return formated price for an unknown currency as well", () => {
+		const price = 201;
+		const currency = "customCurrency"
+		expect(formatPrice(price, currency)).toBe("201 customCurrency");
+	});
+
+	it("should split price by thousands", () => {
+		const result = formatPrice(10250, "RUB");
+		expect(result).toEqual(expect.stringContaining("10 250"));
+	});
+
+	it("should return an empty string when price is null", () => {
+		const result = formatPrice(null, "RUB");
+		expect(result).toBe("");
+	});
+});
