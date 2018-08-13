@@ -1,26 +1,43 @@
 
 .currency__list {  
 	padding: 20px 15px;
+	font-size: 0.8rem;
+	border-radius: 5px 5px 0 0;
 }
 
-.currency__button, .currency__button--selected { 
+.currency__list-header {
+	text-transform: uppercase;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.currency__button {
 	padding: 10px 20px;
 	border: 1px solid;
 	cursor: pointer;
-}
 
-.currency__button { 
 	color: #2e9cf4;
 	border-color: #d2d5d6;;
 	background-color: #fff;
 }
 
 .currency__button:hover {
+	color: #2e9cf4;
 	border-color: #64b5f5;
 	background-color: #f2fcff;
 }
 
-.currency__button--selected {
+.currency__button:first-child {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.currency__button:last-child {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.button--selected {
 	color: #fff;
 	border-color: #2e9cf4;
 	background-color: #2e9cf4;

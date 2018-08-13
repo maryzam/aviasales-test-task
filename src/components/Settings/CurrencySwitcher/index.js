@@ -34,7 +34,9 @@ class CurrencySwitcher extends React.Component {
 		
 		return ( 
 			<div className="currency__list">
-				<div>Валюта</div>
+				<div className="currency__list-header">
+					Валюта
+				</div>
 				<div>
 				{ 
 					isLoading ?

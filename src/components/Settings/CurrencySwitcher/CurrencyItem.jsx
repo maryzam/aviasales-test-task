@@ -2,12 +2,10 @@
 import React from 'react';
 
 const CurrencyItem = ({ currency, isSelected, handleToggle, selectedCurrency }) => {
-		const statusClass = isSelected ? 
-							"currency__button--selected" :
-							"currency__button";
+		const statusClass = isSelected ? "button--selected" : "";
 		return (
 			<button
-				className={ statusClass }
+				className={ `currency__button ${statusClass}` }
 					key={ currency}
 					value={ currency}
 					onClick={ handleToggle } >
