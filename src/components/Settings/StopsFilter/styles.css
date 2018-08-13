@@ -1,16 +1,85 @@
 
 .filter {
 	background: #fff;
-	padding: 20px 15px;
+	padding: 20px 0px;
+	border-radius: 0 0 5px 5px;
 }
 
 .filter__header {
-	padding: 5px;
+	padding: 0 15px 15px;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 .filter__list {
 }
 
 .filter__item {
-	padding-bottom: 5px;
+	padding: 10px 15px;
+}
+
+.filter__item:hover {
+	background-color: #f2fcff;	
+}
+
+.checkbox__label {
+	display: inline-block;
+	cursor: pointer;
+}
+
+.checkbox__item {
+	margin-right: 5px;
+	display: inline-block;
+}
+
+.checkbox__item-input {
+	display: none;
+}
+
+.checkbox__item-display {
+	display: inline-block;
+	margin-bottom: -5px; 
+
+	width: 20px;
+	height: 20px;
+	z-index: 1;
+
+	background: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+}
+
+.checkbox__item-input:checked + .checkbox__item-display::after {
+	content: "✓";
+	color: #2e9cf4;
+	display: block;
+	position: relative;
+	left: 5px;
+}
+
+.checkbox__item-input:checked + .checkbox__item-display {
+	border-color: #2196f3;
+	background-color: #f2fcff;
+}
+
+.filter__item-only {
+	display: none;
+	padding: 5px 10px 0;
+	float: right;
+
+	color: #2196f3;
+	font-weight: bold;
+	font-size: 0.65rem;
+
+	text-transform: uppercase;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.filter__item-only:hover {
+	color: #ff6d00;
+}
+
+.filter__item:hover .filter__item-only {
+ 	display: inline-block;
 }

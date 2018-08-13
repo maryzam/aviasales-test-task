@@ -83,6 +83,7 @@
 	order: 2;
 	flex: 1 0;
 	text-align: center;
+	text-transform: uppercase;
 }
 
 .ticket__details-arrival { 

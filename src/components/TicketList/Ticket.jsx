@@ -33,7 +33,7 @@ const Ticket = ({ info, currency }) => {
 						</p>
 					</div>
 					<div className="ticket__details-stops">
-						<p>{ formatStops(info.stops) }</p>
+						<p>{ formatStops(info.stops) } &nbsp;</p>
 						<div className="ticket__details-path">
 							<div className="ticket__details-line"></div>
 							<div className="ticket__details-airplane"></div>

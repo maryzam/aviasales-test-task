@@ -18,14 +18,19 @@ const StopCheckbox = ({ stop, checked, handleToggle }) => {
 		const itemId = `stops-${stop}`;
 		return (
 			<Fragment>
-				<input className="checkbox__item"
-					id={ itemId }
-					type="checkbox"
-					checked={ checked }
-					value={ stop }
-					onChange={ handleToggle }>
-				</input>
+				
 				<label htmlFor={ itemId } className="checkbox__label">
+					<span className="checkbox__item">
+						<input className="checkbox__item-input"
+							id={ itemId }
+							type="checkbox"
+							checked={ checked }
+							value={ stop }
+							onChange={ handleToggle }>
+						</input>
+						<span className="checkbox__item-display">					
+						</span>
+					</span>
 					{ getLabelText(stop) }
 				</label>
 			</Fragment>
