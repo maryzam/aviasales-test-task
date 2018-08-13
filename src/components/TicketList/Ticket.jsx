@@ -1,8 +1,9 @@
 import React from 'react';
 
 import { formatStops, getCarrierLogo } from '../../utils';
+import currencyService from '../../services/currency';
 
-const Ticket = ({ info }) => {
+const Ticket = ({ info, currency }) => {
 
 		return (
 			<article className="ticket">
@@ -12,7 +13,7 @@ const Ticket = ({ info }) => {
 						 src={ getCarrierLogo(info.carrier) } 
 						 alt={ info.carrier } />
 					<button className="ticket__buy-button">
-						Купить за { info.price }₽
+						Купить за { currencyService.exchange(info.price, currency) } { currency }
 					</button>
 				</section>
 

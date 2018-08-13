@@ -5,15 +5,19 @@ import './styles.css';
 import Ticket from './Ticket';
 import NoTickets from './NoTickets';
 
-const TicketList = ({ tickets }) => {
+const TicketList = ({ tickets, currency }) => {
 
 		return (
 			<main className="ticketList"> 
 			{
-				(tickets.length > 0) ?
-					tickets.map((info) => (<Ticket key={ info.id } info={ info } />)) :
+				(tickets && tickets.length > 0) ?
+					tickets.map((info) => (
+						<Ticket 
+							key={ info.id } 
+							info={ info } 
+							currency={ currency }/> )
+					) :
 					<NoTickets />
-					
 			}
 			</main>
 		); 

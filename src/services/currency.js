@@ -1,14 +1,13 @@
-
+// use this service as soos as it doesn't require any api key for free version
+// max 2 exchages per request limit (don't care about it in demo)
+const apiEndpoint = "https://free.currencyconverterapi.com/api/v6";
 
 const baseCurrency = "RUB";
 const supportedCurrencies = [ "RUB", "USD", "EUR" ]
 
-const apiEndpoint = "https://free.currencyconverterapi.com/api/v6";
-
 class CurrencyService {
 
 	constructor() {
-
 		this.rates = {};
 		this.rates[baseCurrency] = 1;
 	}
@@ -19,7 +18,6 @@ class CurrencyService {
 						.filter((c) => c !== baseCurrency)
 						.map((c) => (`${baseCurrency}_${c}`))
 						.join();
-
 		const request = `${apiEndpoint}/convert?q=${query}`;
 
 		try {
@@ -45,10 +43,15 @@ class CurrencyService {
 		const rate = this.rates[currency];
 		if (!rate) {
 			console.error(`Unable to convert price to ${currency} currency`);
-			return "";
+			return null;
 		}
-		const result = Number.parseFloat(price) * rate;
-		return (result && !Number.isNan(result)) ? result : "";
+		const result = Number.parseFloat(price);
+		if (!result || Number.isNaN(result)) {
+			console.error("Ticket price should be a number (float)");
+			return null;
+		}
+		// dummy price rounding, should be more accurate irl
+		return Math.ceil(result * rate);
 	}
 
 	getSupportedCurrencies() {
