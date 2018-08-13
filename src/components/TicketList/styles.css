@@ -5,6 +5,7 @@
 	flex-grow: 1;
 	flex-shrink: 1;
 	margin: 20px;
+	font-size: 1rem;
 }
 
 .noTickets {
@@ -22,16 +23,19 @@
 	flex-direction: row;
 
 	margin-bottom: 20px;
-	
+	font-size: 0.75rem;
+
 	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
+
 }
 
 .ticket__buy {  
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
 	padding: 20px;
+	width: 200px;
+	text-align: center;;
+	border-right: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .ticket__carrier-logo {  
@@ -40,14 +44,22 @@
 }
 
 .ticket__buy-button {  
+	width: 100%;
 	padding: 10px;
-	color: #fff;
-	text-align: center;
+	border-radius: 5px;
 	background-color: #ff6d00;
+	box-shadow: 0 1px 0 0 #d64d08;
 }
 
 .ticket__buy-button:hover {
 	background-color: #ff8124
+}
+
+.buy-button__text {
+	display: block;
+	color: #fff;
+	text-align: center;
+	line-height: 1.25;
 }
 
 .ticket__details { 
@@ -64,6 +76,7 @@
 
 .ticket__details-departure {  
 	order: 1;
+	text-align: left;
 }
 
 .ticket__details-stops {  
@@ -74,4 +87,18 @@
 
 .ticket__details-arrival { 
 	order: 3;
+	text-align: right;
+}
+
+.ticket__details-airport {
+	font-weight: bold;
+}
+
+.ticket__details-time {
+	font-size: 1.75rem;
+}
+
+.ticket__details-date, 
+.ticket__details-stops {
+	color: #b7b7b7;
 }
