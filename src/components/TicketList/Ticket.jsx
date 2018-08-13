@@ -40,7 +40,7 @@ const Ticket = ({ info, currency }) => {
 							{ info.arrival_time }
 						</p>
 						<p className="ticket__details-airport">
-							{ info.origin }, { info.origin_name }
+							{ info.destination_name }, { info.destination }
 						</p>
 						<p className="ticket__details-date">
 							{ info.arrival_date }
