@@ -22,8 +22,8 @@ class CurrencyService {
 
 		try {
 			const response = await fetch(request);
-			if (response.ok) {
 
+			if (response.ok) {
 				const { results } = await response.json();
 				const newRates = {};
 				Object.values(results)
@@ -54,8 +54,17 @@ class CurrencyService {
 		return Math.ceil(result * rate);
 	}
 
+	getRates() {
+		return this.rates;
+	}
+
 	getSupportedCurrencies() {
 		return supportedCurrencies;
+	}
+
+	resetRates() {
+		this.rates = {};
+		this.rates[baseCurrency] = 1;
 	}
 }
 
