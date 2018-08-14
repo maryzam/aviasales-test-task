@@ -3,6 +3,14 @@ import React from 'react';
 import { formatStops, formatPrice, getCarrierLogo } from '../../utils';
 import currencyService from '../../services/currency';
 
+import moment from "moment";
+import locale_ru from "moment/locale/ru";
+moment.locale("ru", locale_ru);
+
+function formatDate(date) {
+	return moment(date, "DD.MM.YY").format("D MMM YYYY, ddd");
+}
+
 const Ticket = ({ info, currency }) => {
 
 		const price = currencyService.exchange(info.price, currency);
@@ -29,7 +37,7 @@ const Ticket = ({ info, currency }) => {
 							{ info.origin }, { info.origin_name }
 						</p>
 						<p className="ticket__details-date">
-							{ info.departure_date }
+							{ formatDate(info.departure_date) }
 						</p>
 					</div>
 					<div className="ticket__details-stops">
@@ -47,7 +55,7 @@ const Ticket = ({ info, currency }) => {
 							{ info.destination_name }, { info.destination }
 						</p>
 						<p className="ticket__details-date">
-							{ info.arrival_date }
+							{ formatDate(info.arrival_date) }
 						</p>
 					</div>
 				</section>
