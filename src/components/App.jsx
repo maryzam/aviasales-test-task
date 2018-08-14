@@ -6,25 +6,43 @@ import Header from './Header/Header';
 
 import './app.css';
 
-import data from '../../data/tickets.json';
+import ticketService from '../services/tickets';
 
-const allTickets = data.tickets.map((ticket, id) =>  {
-	return Object.assign({ id }, ticket);
-});
-
-allTickets.sort((first, second) => (first.price - second.price));
+const filterTickets = (tickets, stops) => {
+	const stopsPredicate = (item) => (item.stops < 4) && stops[item.stops];
+	return tickets.filter(stopsPredicate);
+};
 
 class App extends React.Component {
 
+	allTickets = [];
+
 	state = {
-		tickets: allTickets,
+		isLoading: true,
 		stops: Array(4).fill(true),
-		currency: "RUB" // todo use const instead of string
+		currency: "RUB", // todo use const instead of string
+		tickets: []
+	};
+
+	componentDidMount() {
+		ticketService
+			.fetchTickets()
+			.then((data) => {
+				const { stops } = this.state;
+				this.allTickets = data;
+				this.setState({
+					isLoading: false,
+					tickets: filterTickets(data, stops)
+				});
+			})
+			.catch((err) => {
+				console.error("Failed to fetch tickets", err); // todo
+			})
 	}
 
 	handleStopsChange = (stops) => {
 		const stopsPredicate = (item) => (item.stops < 4) && stops[item.stops];
-		const tickets = allTickets.filter(stopsPredicate);
+		const tickets = this.allTickets.filter(stopsPredicate);
 		this.setState({ stops, tickets });
 	}
 

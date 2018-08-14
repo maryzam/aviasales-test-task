@@ -4,7 +4,6 @@ import Ticket from './Ticket';
 import NoTickets from './NoTickets';
 
 const TicketList = ({ tickets, currency }) => {
-
 		return (
 			<main className="ticketList"> 
 			{
