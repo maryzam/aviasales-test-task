@@ -1,7 +1,14 @@
 .search__main {
 	width: 100%;
+	padding: 10px 5px;
+	
 	display: flex;
 	flex-direction: row;
 	align-items: start;
 }
 
+@media screen and (max-width: 780px) {
+	.search__main {
+		flex-direction: column;
+	}
+}

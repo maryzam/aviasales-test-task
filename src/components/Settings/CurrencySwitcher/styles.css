@@ -11,9 +11,10 @@
 }
 
 .currency__button {
-	padding: 10px 20px;
-	border: 1px solid;
+	width: 33%;
+	padding: 10px 0;
 	cursor: pointer;
+	border: 1px solid;
 
 	color: #2e9cf4;
 	border-color: #d2d5d6;;
@@ -42,3 +43,30 @@
 	background-color: #2e9cf4;
 }
 
+@media screen and (min-width: 600px) and (max-width: 780px) {
+	.currency__list {
+		flex-grow: 1;
+		min-width: 150px;
+		border-radius: 5px 0 0 5px;	
+		border-right: 1px solid rgba(0,0,0,0.2);
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.currency__list {
+		border-radius: 5px 0 0 5px;	
+		border-right: 1px solid rgba(0,0,0,0.2);
+	}
+
+	.currency__button {
+		width: 100%;
+	}
+
+	.currency__button:first-child {
+		border-radius: 5px 5px 0 0;
+	}
+
+	.currency__button:last-child {
+		border-radius: 0 0 5px 5px ;
+	}
+}

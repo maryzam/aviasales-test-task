@@ -1,5 +1,6 @@
 
 .filter {
+	width: 100%;
 	background: #fff;
 	padding: 20px 0px;
 	border-radius: 0 0 5px 5px;
@@ -11,8 +12,7 @@
 	text-transform: uppercase;
 }
 
-.filter__list {
-}
+.filter__list {  }
 
 .filter__item {
 	padding: 10px 15px;
@@ -63,7 +63,8 @@
 }
 
 .filter__item-only {
-	display: none;
+	visibility: hidden;
+
 	padding: 5px 10px 0;
 	float: right;
 
@@ -81,5 +82,26 @@
 }
 
 .filter__item:hover .filter__item-only {
- 	display: inline-block;
+	visibility: visible;
+}
+	
+@media screen and (max-width: 780px) and (min-width: 450px) {
+
+	.filter__list {
+		display: flex;
+		flex-direction: row;
+		flex-grow: 1;
+	}
+
+	.filter__item {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		flex-shrink: 1;
+	}
+
+	.filter__item-only {
+		justify-content: center;
+		text-align: center;
+	}
 }

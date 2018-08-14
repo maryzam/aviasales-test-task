@@ -38,7 +38,7 @@ class App extends React.Component {
 		return (
 			<Fragment>
 				<Header />
-				<main class="search__main">
+				<main className="search__main">
 					<Settings 
 						stops={ this.state.stops }
 						handleStopsChange = { this.handleStopsChange } 
