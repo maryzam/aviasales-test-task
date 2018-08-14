@@ -3,7 +3,11 @@
 	width: 235px;
 	margin: 20px;
 
+	flex-grow: 0;
+	flex-shrink: 0;
+
 	font-size: 0.8rem;
+	text-align: left;
 
 	background-color: #fff;
 	

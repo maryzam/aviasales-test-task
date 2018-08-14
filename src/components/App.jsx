@@ -1,6 +1,10 @@
 import React, { Fragment } from 'react';
+
 import TicketList from './TicketList';
 import Settings from './Settings';
+import Header from './Header';
+
+import './app.css';
 
 import data from '../../data/tickets.json';
 
@@ -33,14 +37,17 @@ class App extends React.Component {
 	render() {
 		return (
 			<Fragment>
-				<Settings 
-					stops={ this.state.stops }
-					handleStopsChange = { this.handleStopsChange } 
-					currency={ this.state.currency }
-					handleCurrencyChange={ this.handleCurrencyChange }/>
-				<TicketList 
-					tickets={ this.state.tickets } 
-					currency={ this.state.currency } />
+				<Header />
+				<main class="search__main">
+					<Settings 
+						stops={ this.state.stops }
+						handleStopsChange = { this.handleStopsChange } 
+						currency={ this.state.currency }
+						handleCurrencyChange={ this.handleCurrencyChange }/>
+					<TicketList 
+						tickets={ this.state.tickets } 
+						currency={ this.state.currency } />
+				</main>
 			</Fragment>
 		);
 	}
