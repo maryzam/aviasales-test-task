@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 
-import TicketList from './TicketList';
-import Settings from './Settings';
-import Header from './Header';
+import { TicketList } from './TicketList';
+import Settings from './Settings/Settings';
+import Header from './Header/Header';
 
 import './app.css';
 

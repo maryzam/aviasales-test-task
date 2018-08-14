@@ -2,9 +2,7 @@ import React from 'react';
 
 import { shallow } from 'enzyme';
 
-import StopsFilter from "../../src/components/Settings/StopsFilter";
-import StopCheckbox from "../../src/components/Settings/StopsFilter/StopCheckbox";
-import StopOnly from "../../src/components/Settings/StopsFilter/StopOnly";
+import { StopsFilter, StopCheckbox, StopOnly } from "../../src/components/Settings/StopsFilter";
 
 describe("StopsFilter", () => {
 

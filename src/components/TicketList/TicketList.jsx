@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './styles.css';
-
 import Ticket from './Ticket';
 import NoTickets from './NoTickets';
 
@@ -21,7 +19,6 @@ const TicketList = ({ tickets, currency }) => {
 			}
 			</main>
 		); 
-			
 	};
 
 export default TicketList;

@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './styles.css';
-
 import StopCheckbox from './StopCheckbox';
 import StopOnly from './StopOnly';
 

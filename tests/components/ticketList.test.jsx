@@ -2,9 +2,7 @@ import React from 'react';
 
 import { shallow } from 'enzyme';
 
-import TicketList from "../../src/components/TicketList";
-import Ticket from "../../src/components/TicketList/Ticket";
-import NoTickets from "../../src/components/TicketList/NoTickets";
+import { TicketList, Ticket, NoTickets } from "../../src/components/TicketList";
 
 const tickets = [{
 			"id": 1,

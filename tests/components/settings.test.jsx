@@ -2,9 +2,9 @@ import React from 'react';
 
 import { shallow } from 'enzyme';
 
-import Settings from "../../src/components/Settings";
-import StopsFilter from "../../src/components/Settings/StopsFilter";
-import CurrencySwitcher from "../../src/components/Settings/CurrencySwitcher";
+import Settings from "../../src/components/Settings/Settings";
+import { StopsFilter } from "../../src/components/Settings/StopsFilter";
+import { CurrencySwitcher } from "../../src/components/Settings/CurrencySwitcher";
 
 describe("Settings Component", () => {
 

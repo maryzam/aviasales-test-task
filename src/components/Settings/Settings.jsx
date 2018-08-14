@@ -1,9 +1,9 @@
 import React from 'react';
 
-import './styles.css';
+import styles from './settings.css';
 
-import CurrencySwitcher from './CurrencySwitcher';
-import StopsFilter from './StopsFilter';
+import { CurrencySwitcher } from './CurrencySwitcher';
+import { StopsFilter } from './StopsFilter';
 
 const Settings = ({ stops, handleStopsChange, currency, handleCurrencyChange }) => (
 		<aside className="settings__panel">
