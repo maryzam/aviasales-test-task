@@ -39,8 +39,9 @@
 .ticket__buy {  
 	padding: 20px;
 	width: 200px;
-	text-align: center;;
-	border-right: 1px solid rgba(0, 0, 0, 0.15);
+	text-align: center;
+	border: 0 solid rgba(0, 0, 0, 0.15);
+	border-width: 0 1px 0 0;
 }
 
 .ticket__carrier-logo {  
@@ -128,4 +129,23 @@
 	height: 14px;
 	background: no-repeat center center;
 	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAIAAAD9iXMrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMjHxIGmVAAAAk0lEQVQoU42R0Q6CMAxF9/+fp8JAh1MGRiRiiPNlEWozrmZ7kOykSXO7m3ZbBQVkRdn1PURM5KubdicL5xx0QOR7jOMmy8/GQAdEvvc0bXPJ1qe1KH0R6qitfUERVfrEvlJVMwpAmPYi94drd1tCac0+P735Fbm9uA/DcrAS3Ci5X+r9kD1r70X2pP5f6j7+7pfoA/Dz35J3ql7hAAAAAElFTkSuQmCC');
+}
+
+@media screen and (max-width: 600px) {
+	.ticket {
+		flex-direction: column-reverse;
+	}
+
+	.ticket__buy {
+		width: 100%;
+		border-width: 1px 0 0 0;
+	}
+
+	.ticket__buy-button {
+		width: 50%;
+	}
+
+	.ticket__carrier-logo {  
+		margin: 0 20px 0 0;
+	}
 }
