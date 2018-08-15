@@ -3,6 +3,8 @@ import React from 'react';
 import currencyService from '../../../services/currency';
 import CurrencyItem from './CurrencyItem';
 
+import { Preloader } from '../../Common';
+
 class CurrencySwitcher extends React.Component {
 
 	state = {
@@ -37,8 +39,8 @@ class CurrencySwitcher extends React.Component {
 				</div>
 				<div>
 				{ 
-					isLoading ?
-					<span>Загрузка...</span> :
+					(isLoading) ?
+					<Preloader /> :
 					currencies.map((c) => (
 						<CurrencyItem key={c}
 							currency={c} 

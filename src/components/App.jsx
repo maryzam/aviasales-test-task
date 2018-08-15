@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 import { TicketList } from './TicketList';
 import Settings from './Settings/Settings';
 import Header from './Header/Header';
+import { Preloader } from './Common';
 
 import './app.css';
 
@@ -53,18 +54,27 @@ class App extends React.Component {
 	}
 
 	render() {
+
+		const { isLoading } = this.state;
+
 		return (
 			<Fragment>
 				<Header />
 				<main className="search__main">
-					<Settings 
-						stops={ this.state.stops }
-						handleStopsChange = { this.handleStopsChange } 
-						currency={ this.state.currency }
-						handleCurrencyChange={ this.handleCurrencyChange }/>
-					<TicketList 
-						tickets={ this.state.tickets } 
-						currency={ this.state.currency } />
+					{
+						(isLoading) ?
+							<Preloader /> :
+							(<Fragment>
+								<Settings 
+									stops={ this.state.stops }
+									handleStopsChange = { this.handleStopsChange } 
+									currency={ this.state.currency }
+									handleCurrencyChange={ this.handleCurrencyChange }/>
+								<TicketList 
+									tickets={ this.state.tickets } 
+									currency={ this.state.currency } />
+							</Fragment>)
+					}
 				</main>
 			</Fragment>
 		);
