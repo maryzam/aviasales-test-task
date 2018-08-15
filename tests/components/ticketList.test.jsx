@@ -32,21 +32,6 @@ const tickets = [{
 		    "price": 13100
 		  }];
 
-const singleTicket = {
-			"id": 1,
-		    "origin": "VVO",
-		    "origin_name": "Владивосток",
-		    "destination": "TLV",
-		    "destination_name": "Тель-Авив",
-		    "departure_date": "12.05.18",
-		    "departure_time": "16:20",
-		    "arrival_date": "12.05.18",
-		    "arrival_time": "22:10",
-		    "carrier": "TK",
-		    "stops": 3,
-		    "price": 12400
-		  };
-
 describe("TicketList", () => {
 
 	describe("when there are tickets", () =>{
@@ -64,21 +49,4 @@ describe("TicketList", () => {
 			expect(ticketList.find(Ticket)).toHaveLength(0);	
 		})
 	})
-});
-
-describe("Ticket", () => {
-
-	it("should contain informtion about destination airport", () => {
-		const ticket = shallow(<Ticket info={ singleTicket } />);
-		const { destination, destination_name } = singleTicket;
-		expect(ticket.html()).toMatch(new RegExp(destination));
-		expect(ticket.html()).toMatch(new RegExp(destination_name));
-	});
-
-	it("should contain informtion about departure airport", () => {
-		const ticket = shallow(<Ticket info={ singleTicket } />);
-		const { origin, origin_name } = singleTicket;
-		expect(ticket.html()).toMatch(new RegExp(origin));
-		expect(ticket.html()).toMatch(new RegExp(origin_name));
-	});
 });
