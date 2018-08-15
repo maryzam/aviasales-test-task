@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import { TicketList } from './TicketList';
 import Settings from './Settings/Settings';
 import Header from './Header/Header';
-import { Preloader } from './Common';
+import { Preloader, ErrorMessage } from './Common';
 
 import './app.css';
 
@@ -26,19 +26,7 @@ class App extends React.Component {
 	};
 
 	componentDidMount() {
-		ticketService
-			.fetchTickets()
-			.then((data) => {
-				const { stops } = this.state;
-				this.allTickets = data;
-				this.setState({
-					isLoading: false,
-					tickets: filterTickets(data, stops)
-				});
-			})
-			.catch((err) => {
-				console.error("Failed to fetch tickets", err); // todo
-			})
+		this.loadTickets();
 	}
 
 	handleStopsChange = (stops) => {
@@ -53,9 +41,30 @@ class App extends React.Component {
 		this.setState({ currency });
 	}
 
+	loadTickets = () => {
+		this.setState({ isLoading: true });
+		ticketService
+			.fetchTickets()
+			.then((data) => {
+				const { stops } = this.state;
+				this.allTickets = data;
+				this.setState({
+					isLoading: false,
+					isError: false,
+					tickets: filterTickets(data, stops)
+				});
+			})
+			.catch((err) => {
+				this.setState({
+					isLoading: false,
+					isError: true
+				});
+			})
+	}
+
 	render() {
 
-		const { isLoading } = this.state;
+		const { isLoading, isError } = this.state;
 
 		return (
 			<Fragment>
@@ -64,16 +73,20 @@ class App extends React.Component {
 					{
 						(isLoading) ?
 							<Preloader /> :
-							(<Fragment>
-								<Settings 
-									stops={ this.state.stops }
-									handleStopsChange = { this.handleStopsChange } 
-									currency={ this.state.currency }
-									handleCurrencyChange={ this.handleCurrencyChange }/>
-								<TicketList 
-									tickets={ this.state.tickets } 
-									currency={ this.state.currency } />
-							</Fragment>)
+							(isError) ?
+								<ErrorMessage
+									message="Не удалось загрузить билеты 😕" 
+									onRetry={ this.loadTickets }/> : 
+								(<Fragment>
+									<Settings 
+										stops={ this.state.stops }
+										handleStopsChange = { this.handleStopsChange } 
+										currency={ this.state.currency }
+										handleCurrencyChange={ this.handleCurrencyChange }/>
+									<TicketList 
+										tickets={ this.state.tickets } 
+										currency={ this.state.currency } />
+								</Fragment>)
 					}
 				</main>
 			</Fragment>

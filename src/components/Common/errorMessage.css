@@ -1,0 +1,35 @@
+
+.error__container {
+	width: 100%;
+	justify-content: center;
+	text-align: center;
+	padding: 10px 5px;
+}
+
+.error__header {
+	color: tomato;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.error__text {
+	font-size: 1em;
+}
+
+.error__retry {
+	padding-top: 10px;
+}
+
+.error__retry-button {
+	cursor: pointer;
+	padding: 10px 10px;
+	color: #2e9cf4;
+	border: 1px solid #2e9cf4;
+	background-color: #f2fcff;
+	border-radius: 5px;
+}
+
+.error__retry-button:hover {
+	background-color: #e1f8ff;
+}
