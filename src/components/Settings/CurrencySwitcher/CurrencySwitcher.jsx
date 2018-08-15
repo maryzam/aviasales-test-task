@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import currencyService from '../../../services/currency';
 import CurrencyItem from './CurrencyItem';
@@ -45,8 +46,7 @@ class CurrencySwitcher extends React.Component {
 						<CurrencyItem key={c}
 							currency={c} 
 							isSelected={ c === selectedCurrency }
-							handleToggle={ handleCurrencyChange }
-							selectedCurrency={ selectedCurrency }/>
+							handleToggle={ handleCurrencyChange } />
 					)) 
 				}
 				</div>
@@ -54,5 +54,10 @@ class CurrencySwitcher extends React.Component {
 		);
 	}
 }
+
+CurrencySwitcher.propTypes = {
+	selectedCurrency: PropTypes.string.isRequired,
+	handleCurrencyChange: PropTypes.func.isRequired
+};
 
 export default CurrencySwitcher;

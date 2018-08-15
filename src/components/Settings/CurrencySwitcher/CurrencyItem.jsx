@@ -1,7 +1,7 @@
-
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const CurrencyItem = ({ currency, isSelected, handleToggle, selectedCurrency }) => {
+const CurrencyItem = ({ currency, isSelected, handleToggle }) => {
 		const statusClass = isSelected ? "button--selected" : "";
 		return (
 			<button
@@ -13,5 +13,15 @@ const CurrencyItem = ({ currency, isSelected, handleToggle, selectedCurrency }) 
 			</button>
 		);
 }; 
+
+CurrencyItem.propTypes = {
+	currency: PropTypes.string.isRequired,
+	isSelected: PropTypes.bool.isRequired,
+	handleToggle: PropTypes.func.isRequired
+};
+
+CurrencyItem.defaultProps = {
+	isSelected: false
+};
 
 export default CurrencyItem;

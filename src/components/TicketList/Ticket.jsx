@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { formatPrice } from '../../utils';
 import currencyService from '../../services/currency';
@@ -54,5 +55,29 @@ const Ticket = ({ info, currency }) => {
 			</article>
 		);
 	};
+
+Ticket.propTypes = {
+	info: PropTypes.shape({
+		id: PropTypes.string.isRequired,
+		price: PropTypes.number.isRequired,
+		stops: PropTypes.number.isRequired,
+    	stopsLabel: PropTypes.string.isRequired,
+    	carrier: PropTypes.shape({
+			name: PropTypes.string.isRequired,
+			logo: PropTypes.string.isRequired
+		}),
+		departure: PropTypes.shape({
+			airport: PropTypes.string.isRequired,
+			date: PropTypes.string.isRequired,
+			time: PropTypes.string.isRequired,
+		}),
+		arrival: PropTypes.shape({
+			airport: PropTypes.string.isRequired,
+			date: PropTypes.string.isRequired,
+			time: PropTypes.string.isRequired,
+		})
+	}),
+	currency: PropTypes.string.isRequired
+};
 
 export default Ticket;

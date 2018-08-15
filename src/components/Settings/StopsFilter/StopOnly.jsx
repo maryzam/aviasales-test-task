@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const StopOnly = ({ stop, handleClick }) => (
 		<a className="filter__item-only"
@@ -7,5 +8,10 @@ const StopOnly = ({ stop, handleClick }) => (
 				только
 		</a>
 	);
+
+StopOnly.propTypes = {
+	stop: PropTypes.number.isRequired,
+	handleClick: PropTypes.func.isRequired
+};
 
 export default StopOnly;

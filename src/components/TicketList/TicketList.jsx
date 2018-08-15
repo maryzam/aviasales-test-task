@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Ticket from './Ticket';
 import NoTickets from './NoTickets';
@@ -19,5 +20,10 @@ const TicketList = ({ tickets, currency }) => {
 			</main>
 		); 
 	};
+
+TicketList.propTypes = {
+	tickets: PropTypes.arrayOf(PropTypes.object).isRequired,
+	currency: PropTypes.string.isRequired
+};
 
 export default TicketList;

@@ -23,7 +23,7 @@ class TicketService {
 				.sort(byPrice)
 				.map((item, id) => {
 					return {
-						id: id, // should be used a real id from source data
+						id: id.toString(), // should be used a real id from source data
 						carrier: {
 							name: item.carrier,
 							logo: getCarrierLogo(item.carrier) 

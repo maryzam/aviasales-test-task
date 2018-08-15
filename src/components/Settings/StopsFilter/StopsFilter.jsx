@@ -1,13 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import StopCheckbox from './StopCheckbox';
 import StopOnly from './StopOnly';
 
-function getOnSetOnlyHandler(handleStopsChange) {
+function getOnSetOnlyHandler(stops, handleStopsChange) {
 	
 	return ({ target }) => {
+		const total = stops.length;
 		const stopType = +target.dataset.stop;
-		const newStops = Array(4).fill(false);
+		const newStops = Array(total).fill(false);
 		newStops[stopType] = true;
 		handleStopsChange(newStops);
 	}
@@ -18,9 +20,10 @@ function getOnToggleHandler(stops, handleStopsChange) {
 	return ({ target }) => {
 		const stopType = +target.value;
 		const isChecked = target.checked;
+		const total = stops.length;
 
 		if (stopType === -1) { // select all stops at once
-			handleStopsChange(Array(4).fill(isChecked));
+			handleStopsChange(Array(total).fill(isChecked));
 			return; 
 		} 
 		const newStops = [...stops];
@@ -31,7 +34,7 @@ function getOnToggleHandler(stops, handleStopsChange) {
 
 const StopsFilter = ({ stops, handleStopsChange }) => {
 
-	const onSetOnlyStop = getOnSetOnlyHandler(handleStopsChange);
+	const onSetOnlyStop = getOnSetOnlyHandler(stops, handleStopsChange);
 	const onToggleStop = getOnToggleHandler(stops, handleStopsChange);
 
 	const isAllChecked = stops.every((s) => s === true);
@@ -66,5 +69,10 @@ const StopsFilter = ({ stops, handleStopsChange }) => {
 			</div>
 	)
 }
+
+StopsFilter.propTypes = {
+	stops: PropTypes.arrayOf(PropTypes.bool).isRequired,
+	handleStopsChange: PropTypes.func.isRequired
+};
 
 export default StopsFilter;

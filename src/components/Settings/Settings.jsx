@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './settings.css';
 
@@ -15,5 +16,12 @@ const Settings = ({ stops, handleStopsChange, currency, handleCurrencyChange }) 
 				handleStopsChange={ handleStopsChange } />
 		</aside>
 	);
+
+Settings.propTypes = {
+	stops: PropTypes.arrayOf(PropTypes.bool).isRequired,
+	handleStopsChange: PropTypes.func.isRequired,
+	currency: PropTypes.string.isRequired,
+	handleCurrencyChange: PropTypes.func.isRequired
+};
 
 export default Settings;
