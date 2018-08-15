@@ -15,12 +15,12 @@
  
 ## Запуск
 
-Запускаем локально с помощью WebpackDevServer
+Запускаем локально с помощью WebpackDevServer  
+Приложение будет доступно по адресу localhost:9000   
 
-npm install
-npm start
+npm install  
+npm start  
 
-Приложение будет доступно по адресу localhost:9000
 
 ## Использовались
 
