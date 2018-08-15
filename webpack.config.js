@@ -62,7 +62,6 @@ const devConfig = {
     mode: 'development',
     devServer: {
         port: 9000,
-        lazy: true,
         compress: true,
         contentBase: path.join(__dirname, 'dist')
     }
